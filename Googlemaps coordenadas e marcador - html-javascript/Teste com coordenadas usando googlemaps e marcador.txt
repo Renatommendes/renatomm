@@ -1,0 +1,1 @@
+Teste com coordenadas usando googlemaps e marcando no mapa o local.
