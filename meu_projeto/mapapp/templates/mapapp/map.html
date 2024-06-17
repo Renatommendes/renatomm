@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mapa com Google Maps</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key={{ api_key }}"></script>
+    <script>
+    function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 5,
+            center: { lat: -15.794229, lng: -47.882166 } // Centro aproximado do Brasil
+        });
+
+        var markers = [
+            {% for marker in markers %}
+                {
+                    name: "{{ marker.name }}",
+                    lat: {{ marker.lat }},
+                    lng: {{ marker.lng }}
+                },
+            {% endfor %}
+        ];
+
+        var mapMarkers = [];
+        var infowindows = [];
+
+        var userMarker = new google.maps.Marker({
+            position: { lat: -15.794229, lng: -47.882166 },
+            map: map,
+            title: 'User Marker',
+            draggable: true
+        });
+
+        google.maps.event.addListener(userMarker, 'dragend', function(event) {
+            updateMarkers(event.latLng.lat(), event.latLng.lng());
+        });
+
+        document.getElementById('add-marker').addEventListener('click', function() {
+            var lat = parseFloat(document.getElementById('latitude').value);
+            var lng = parseFloat(document.getElementById('longitude').value);
+            if (!isNaN(lat) && !isNaN(lng)) {
+                var newMarkerPosition = { lat: lat, lng: lng };
+                userMarker.setPosition(newMarkerPosition);
+                map.setCenter(newMarkerPosition);
+                updateMarkers(lat, lng);
+            } else {
+                alert('Por favor, insira coordenadas válidas');
+            }
+        });
+
+        function updateMarkers(lat, lng) {
+            // Limpar marcadores existentes no mapa
+            mapMarkers.forEach(function(markerObj) {
+                markerObj.marker.setMap(null);
+            });
+            mapMarkers = [];
+            infowindows = [];
+
+            // Calcular distância para todos os marcadores e ordenar por distância
+            var markersWithDistance = markers.map(function(marker) {
+                var distance = haversine(lat, lng, marker.lat, marker.lng);
+                return { ...marker, distance: distance };
+            });
+            markersWithDistance.sort(function(a, b) {
+                return a.distance - b.distance;
+            });
+
+            // Selecionar os 20 marcadores mais próximos
+            var closestMarkers = markersWithDistance.slice(0, 20);
+
+            var bounds = new google.maps.LatLngBounds();
+
+            // Adicionar marcadores mais próximos ao mapa
+            closestMarkers.forEach(function(marker, index) {
+                var markerPosition = { lat: marker.lat, lng: marker.lng };
+                var mapMarker = new google.maps.Marker({
+                    position: markerPosition,
+                    map: map,
+                    title: marker.name
+                });
+
+                var infowindow = new google.maps.InfoWindow({
+                    content: '<div><strong>' + marker.name + '</strong><br>' +
+                             'Latitude: ' + marker.lat + '<br>' +
+                             'Longitude: ' + marker.lng + '<br>' +
+                             'Distância: ' + marker.distance.toFixed(2) + ' km</div>'
+                });
+
+                mapMarkers.push({ marker: mapMarker, infowindow: infowindow });
+                bounds.extend(mapMarker.position);
+            });
+
+            // Ajustar o zoom do mapa para mostrar todos os marcadores
+            if (closestMarkers.length > 0) {
+                map.fitBounds(bounds);
+            }
+
+            // Exibir a tabela com os marcadores mais próximos
+            var tableBody = document.getElementById('markers-table-body');
+            tableBody.innerHTML = '';
+            closestMarkers.forEach(function(marker, index) {
+                var row = '<tr data-marker-index="' + index + '"><td>' + marker.name + '</td><td>' + marker.lat + '</td><td>' + marker.lng + '</td><td>' + marker.distance.toFixed(2) + ' km</td></tr>';
+                tableBody.innerHTML += row;
+            });
+
+            // Adicionar evento de clique aos itens da tabela
+            var tableRows = document.querySelectorAll('#markers-table-body tr');
+            tableRows.forEach(function(row) {
+                row.addEventListener('click', function() {
+                    var markerIndex = parseInt(this.getAttribute('data-marker-index'));
+                    var mapMarker = mapMarkers[markerIndex].marker;
+                    var infowindow = mapMarkers[markerIndex].infowindow;
+
+                    // Verificar se o infowindow já está aberto
+                    if (infowindows.includes(infowindow)) {
+                        infowindow.close();
+                        infowindows = infowindows.filter(function(iw) {
+                            return iw !== infowindow;
+                        });
+                    } else {
+                        infowindow.open(map, mapMarker);
+                        infowindows.push(infowindow);
+                        map.setCenter(mapMarker.getPosition());
+                    }
+                });
+            });
+
+            if (closestMarkers.length === 0) {
+                alert('Nenhum marcador encontrado.');
+            }
+        }
+
+        function haversine(lat1, lon1, lat2, lon2) {
+            // Converter de graus para radianos
+            lat1 = toRadians(lat1);
+            lon1 = toRadians(lon1);
+            lat2 = toRadians(lat2);
+            lon2 = toRadians(lon2);
+
+            // Fórmula de Haversine
+            var dlat = lat2 - lat1;
+            var dlon = lon2 - lon1;
+            var a = Math.sin(dlat / 2) * Math.sin(dlat / 2) +
+                    Math.cos(lat1) * Math.cos(lat2) *
+                    Math.sin(dlon / 2) * Math.sin(dlon / 2);
+            var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+            var r = 6371; // Raio da Terra em quilômetros
+            return c * r;
+        }
+
+        function toRadians(degrees) {
+            return degrees * (Math.PI / 180);
+        }
+    }
+    </script>
+</head>
+<body onload="initMap()">
+    <h1>Mapa com Marcadores</h1>
+    <div id="map" style="height: 500px; width: 100%;"></div>
+    <h2>Adicionar Novo Marcador</h2>
+    <label for="latitude">Latitude:</label>
+    <input type="text" id="latitude" name="latitude">
+    <label for="longitude">Longitude:</label>
+    <input type="text" id="longitude" name="longitude">
+    <button id="add-marker">Adicionar Marcador</button>
+
+    <h2>Marcadores Próximos</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+                <th>Distância</th>
+            </tr>
+        </thead>
+        <tbody id="markers-table-body">
+            <!-- Linhas da tabela serão inseridas aqui via JavaScript -->
+        </tbody>
+    </table>
+</body>
+</html>
