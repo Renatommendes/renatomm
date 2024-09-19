@@ -1,0 +1,251 @@
+object FrmPrincipal: TFrmPrincipal
+  Left = 0
+  Top = 0
+  Caption = 'Calculadora'
+  ClientHeight = 420
+  ClientWidth = 389
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  KeyPreview = True
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  OnKeyPress = FormKeyPress
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 389
+    Height = 65
+    Align = alTop
+    TabOrder = 0
+    ExplicitWidth = 321
+    object edtVisor: TEdit
+      Left = 136
+      Top = 23
+      Width = 121
+      Height = 21
+      Color = clBtnFace
+      TabOrder = 0
+    end
+  end
+  object Panel2: TPanel
+    Left = 274
+    Top = 65
+    Width = 115
+    Height = 355
+    Align = alRight
+    TabOrder = 1
+    ExplicitLeft = 268
+    ExplicitTop = 71
+    ExplicitHeight = 404
+    object btnsoma: TButton
+      Left = 1
+      Top = 3
+      Width = 92
+      Height = 62
+      Caption = '+'
+      TabOrder = 0
+      OnClick = btnsomaClick
+    end
+    object btnsubtrair: TButton
+      Left = 1
+      Top = 65
+      Width = 92
+      Height = 62
+      Caption = '-'
+      TabOrder = 1
+      OnClick = btnsubtrairClick
+    end
+    object btnMultiplica: TButton
+      Left = 1
+      Top = 127
+      Width = 92
+      Height = 62
+      Caption = '*'
+      TabOrder = 2
+      OnClick = btnMultiplicaClick
+    end
+    object btnDividir: TButton
+      Left = 1
+      Top = 189
+      Width = 92
+      Height = 62
+      Caption = '/'
+      TabOrder = 3
+      OnClick = btnDividirClick
+    end
+    object btnIgual: TButton
+      Left = 1
+      Top = 251
+      Width = 92
+      Height = 102
+      Caption = '='
+      TabOrder = 4
+      OnClick = btnIgualClick
+    end
+  end
+  object Panel7: TPanel
+    Left = 0
+    Top = 65
+    Width = 274
+    Height = 355
+    Align = alClient
+    TabOrder = 2
+    ExplicitWidth = 268
+    ExplicitHeight = 410
+    object Panel4: TPanel
+      Left = 1
+      Top = 89
+      Width = 272
+      Height = 88
+      Align = alTop
+      AutoSize = True
+      TabOrder = 0
+      ExplicitWidth = 569
+      object btn05: TButton
+        Left = 92
+        Top = 1
+        Width = 91
+        Height = 86
+        Caption = '5'
+        TabOrder = 0
+        OnClick = btn05Click
+      end
+      object btn04: TButton
+        Left = 1
+        Top = 1
+        Width = 91
+        Height = 86
+        Caption = '4'
+        TabOrder = 1
+        OnClick = btn04Click
+      end
+      object btn06: TButton
+        Left = 183
+        Top = 1
+        Width = 91
+        Height = 86
+        Caption = '6'
+        TabOrder = 2
+        OnClick = btn06Click
+      end
+    end
+    object Panel3: TPanel
+      Left = 1
+      Top = 1
+      Width = 272
+      Height = 88
+      Align = alTop
+      TabOrder = 1
+      ExplicitLeft = -4
+      ExplicitTop = -4
+      ExplicitWidth = 569
+      object btn01: TButton
+        Left = 1
+        Top = 2
+        Width = 91
+        Height = 86
+        Caption = '1'
+        TabOrder = 0
+        OnClick = btn01Click
+      end
+      object btn02: TButton
+        Left = 92
+        Top = 2
+        Width = 91
+        Height = 86
+        Caption = '2'
+        TabOrder = 1
+        OnClick = btn02Click
+      end
+      object btn03: TButton
+        Left = 183
+        Top = 2
+        Width = 91
+        Height = 86
+        Caption = '3'
+        TabOrder = 2
+        OnClick = btn03Click
+      end
+    end
+    object Panel5: TPanel
+      Left = 1
+      Top = 177
+      Width = 272
+      Height = 86
+      Align = alTop
+      TabOrder = 2
+      ExplicitWidth = 569
+      object btn08: TButton
+        Left = 92
+        Top = 1
+        Width = 91
+        Height = 86
+        Caption = '8'
+        TabOrder = 0
+        OnClick = btn08Click
+      end
+      object btn07: TButton
+        Left = 1
+        Top = 1
+        Width = 91
+        Height = 86
+        Caption = '7'
+        TabOrder = 1
+        OnClick = btn07Click
+      end
+      object btn09: TButton
+        Left = 183
+        Top = 1
+        Width = 91
+        Height = 86
+        Caption = '9'
+        TabOrder = 2
+        OnClick = btn09Click
+      end
+    end
+    object Panel8: TPanel
+      Left = 1
+      Top = 263
+      Width = 272
+      Height = 90
+      Align = alTop
+      TabOrder = 3
+      ExplicitTop = 270
+      ExplicitWidth = 569
+      object btnVirgula: TButton
+        Left = 183
+        Top = 1
+        Width = 91
+        Height = 86
+        Caption = ','
+        TabOrder = 0
+        OnClick = btnVirgulaClick
+      end
+      object Button1: TButton
+        Left = 1
+        Top = 1
+        Width = 91
+        Height = 86
+        Align = alCustom
+        Caption = 'C'
+        TabOrder = 1
+        OnClick = Button1Click
+      end
+      object btn00: TButton
+        Left = 92
+        Top = 1
+        Width = 91
+        Height = 86
+        Caption = '0'
+        TabOrder = 2
+        OnClick = btn00Click
+      end
+    end
+  end
+end
