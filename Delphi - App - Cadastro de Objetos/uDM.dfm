@@ -1,0 +1,24 @@
+﻿object DM: TDM
+  OldCreateOrder = False
+  Height = 150
+  Width = 215
+  object FDConexão: TFDConnection
+    Params.Strings = (
+      'Database=teste'
+      'User_Name=PC34\SQLEXPRESS'
+      'Server=PC34\SQLEXPRESS'
+      'OSAuthent=Yes'
+      'DriverID=MSSQL')
+    Connected = True
+    Left = 64
+    Top = 32
+  end
+  object FDQuery1: TFDQuery
+    Active = True
+    Connection = FDConexão
+    SQL.Strings = (
+      'select *  from TblCadastro')
+    Left = 144
+    Top = 96
+  end
+end

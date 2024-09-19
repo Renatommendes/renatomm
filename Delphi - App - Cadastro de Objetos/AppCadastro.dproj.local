@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/03/07 10:39:09.000.674,=C:\Users\grv\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/03/09 13:26:28.000.703,=C:\Users\grv\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/03/09 13:27:00.000.211,C:\Users\grv\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\grv\Desktop\Renato Estudo Delphi\Apps Estudo\App - Cadastro de Objetos\uFrmConsulta.dfm</Transaction>
+    <Transaction>2022/03/09 13:27:00.000.211,C:\Users\grv\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\grv\Desktop\Renato Estudo Delphi\Apps Estudo\App - Cadastro de Objetos\uFrmConsulta.pas</Transaction>
+    <Transaction>2022/03/09 13:27:16.000.370,C:\Users\grv\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\grv\Desktop\Renato Estudo Delphi\Apps Estudo\App - Cadastro de Objetos\AppCadastro.dproj</Transaction>
+    <Transaction>2022/03/21 10:10:32.000.080,=C:\Users\grv\Desktop\Renato Estudo Delphi\Apps Estudo\App - Cadastro de Objetos\Unit1.pas</Transaction>
+    <Transaction>2022/03/21 10:17:01.000.461,C:\Users\grv\Desktop\Renato Estudo Delphi\Apps Estudo\App - Cadastro de Objetos\Unit1.pas=C:\Users\grv\Desktop\Renato Estudo Delphi\Apps Estudo\App - Cadastro de Objetos\uDM.pas</Transaction>
+    <Transaction>2022/03/21 10:17:01.000.461,C:\Users\grv\Desktop\Renato Estudo Delphi\Apps Estudo\App - Cadastro de Objetos\Unit1.dfm=C:\Users\grv\Desktop\Renato Estudo Delphi\Apps Estudo\App - Cadastro de Objetos\uDM.dfm</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<NoProfile iOSSimulator="iPhone5"/>
+	</ActiveMobileDevice>
+</BorlandProject>

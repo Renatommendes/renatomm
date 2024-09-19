@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{0C3C8839-3339-4DBB-AEAD-F10AA4407694}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="AppCadastro.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\delphi_CRUD-master\CRUD.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="AppCadastro">
+        <MSBuild Projects="AppCadastro.dproj"/>
+    </Target>
+    <Target Name="AppCadastro:Clean">
+        <MSBuild Projects="AppCadastro.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AppCadastro:Make">
+        <MSBuild Projects="AppCadastro.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CRUD">
+        <MSBuild Projects="..\..\..\delphi_CRUD-master\CRUD.dproj"/>
+    </Target>
+    <Target Name="CRUD:Clean">
+        <MSBuild Projects="..\..\..\delphi_CRUD-master\CRUD.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CRUD:Make">
+        <MSBuild Projects="..\..\..\delphi_CRUD-master\CRUD.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="AppCadastro;CRUD"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="AppCadastro:Clean;CRUD:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="AppCadastro:Make;CRUD:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
