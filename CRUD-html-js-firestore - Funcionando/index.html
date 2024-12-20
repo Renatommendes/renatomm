@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Name</label> <input id="Namebox" type="text"><br><br>
+    <label>RollNo</label> <input id="Rollbox" type="text"><br><br>
+    <label>Section</label> <input id="Secbox" type="text"><br><br>
+    <label>Gender</label>
+    <select id="Genbox">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select>
+
+    <hr>
+    <button id="Insbtn">Insert</button>
+    <button id="Selbtn">Select</button>
+    <button id="Updbtn">Update</button>
+    <button id="Delbtn">Delete</button>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
+        import { getFirestore, doc, getDoc, setDoc, collection, addDoc, updateDoc, deleteDoc, deleteField} from "https://www.gstatic.com/firebasejs/9.18.0/firebase-firestore.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+        // Your web app's Firebase configuration
+const firebaseConfig = {
+  // TODO: Add SDKs for Firebase products that you want to use
+ // https://firebase.google.com/docs/web/setup#available-libraries
+
+ // Your web app's Firebase configuration
+   apiKey: "YOUR KEY",
+   authDomain: "firestore-teste-334f6.firebaseapp.com",
+   projectId: "firestore-teste-334f6",
+   storageBucket: "firestore-teste-334f6.appspot.com",
+   messagingSenderId: "628918570867",
+   appId: "1:628918570867:web:d63cc02ac0f7924cee3f06"
+
+   };
+
+     // Initialize Firebase
+     const app = initializeApp(firebaseConfig);
+    // Initialize Cloud Firestore and get a reference to the service
+    const db = getFirestore(app);
+//-----------------------------referenses-----------------------------------------------//
+
+        let NameBox = document.getElementById("Namebox");
+        let RollBox = document.getElementById("Rollbox");
+        let SecBox = document.getElementById("Secbox");
+        let GenBox = document.getElementById("Genbox");
+
+        let insBtn = document.getElementById("Insbtn");
+        let selBtn = document.getElementById("Selbtn");
+        let updBtn = document.getElementById("Updbtn");
+        let delBtn = document.getElementById("Delbtn");
+
+//-----------------------------Adding Document-----------------------------------------------//
+
+        async function AddDocument_AutoID(){
+            var ref = collection(db, "TheStudentsList");
+
+            const docRef = await addDoc(
+                ref,{
+                    NameOfStd:NameBox.value,
+                    RollNo: RollBox.value,
+                    Section: SecBox.value,
+                    Gender: GenBox.value  
+                }
+            )
+            .then(() =>{
+                alert("data added successfully");
+            })
+            .catch((error)=>{
+                alert("unsuccessfull operation, error"+error)
+            });
+            console.log("Document id is" + docRef.id);
+        }
+
+
+        async function AddDocument_CustomID(){
+        var ref = doc(db, "TheStudentsList", RollBox.value);
+
+            await setDoc(
+                ref,{
+                    NameOfStd:NameBox.value,
+                    RollNo: RollBox.value,
+                    Section: SecBox.value,
+                    Gender: GenBox.value  
+                })
+            .then(() =>{
+                alert("data added successfully");
+            })
+            .catch((error)=>{
+                alert("unsuccessfull operation, error"+error)
+            });
+        }
+
+//-----------------------------Getting Document-----------------------------------------------//
+
+        async function getADocument(){
+            var ref = doc(db, "TheStudentsList", RollBox.value);
+            const docSnap = await getDoc(ref);
+
+            if(docSnap.exists()){
+                NameBox.value = docSnap.data().NameOfStd;
+                SecBox.value = docSnap.data().Section;
+                GenBox.value = docSnap.data().Gender;
+            }
+            else{
+                alert("no such Document");
+            }
+        }
+//-----------------------------Updating Document data-----------------------------------------------//
+
+        async function UpdateFieldsInADocument(){
+            var ref = doc(db, "TheStudentsList", RollBox.value);
+
+            await updateDoc(
+                ref,{
+                    NameOfStd:NameBox.value,
+                    Section: SecBox.value,
+                    Gender: GenBox.value  
+                })
+            .then(() =>{
+                alert("data Update successfully");
+            })
+            .catch((error)=>{
+                alert("unsuccessfull operation, error"+error)
+            });
+        }
+
+//-----------------------------Delete Document-----------------------------------------------//
+
+        async function DeleteDocument(){
+            var ref = doc(db, "TheStudentsList", RollBox.value);
+            const docSnap = await getDoc(ref);
+
+            if(!docSnap.exists()){
+                alert("Document does not exist");
+                return;
+            }
+
+            await deleteDoc(ref)
+            .then(()=>{
+                alert("data Deleted successfully")
+            })
+            .catch((error)=>{
+                alert("unsuccessfull operation, error"+error)
+            });
+        }
+
+
+//-----------------------------Assign events to btns-----------------------------------------------//
+
+        insBtn.addEventListener("click", AddDocument_CustomID);
+        selBtn.addEventListener("click", getADocument);
+        updBtn.addEventListener("click", UpdateFieldsInADocument);
+        delBtn.addEventListener("click", DeleteDocument);
+
+
+      </script>
+
+</body>
+</html>

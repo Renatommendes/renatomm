@@ -1,0 +1,80 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 279
+  ClientWidth = 695
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object btnPesquisar: TButton
+    Left = 320
+    Top = 24
+    Width = 75
+    Height = 25
+    Caption = 'Pesquisar'
+    TabOrder = 0
+    OnClick = btnPesquisarClick
+  end
+  object edtPesquisar: TEdit
+    Left = 8
+    Top = 26
+    Width = 281
+    Height = 21
+    TabOrder = 1
+  end
+  object DBGrid1: TDBGrid
+    Left = 8
+    Top = 104
+    Width = 369
+    Height = 120
+    DataSource = DataSource1
+    TabOrder = 2
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+  end
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      'Database=teste'
+      'User_Name=PC34\SQLEXPRESS'
+      'Server=PC34\SQLEXPRESS'
+      'OSAuthent=Yes'
+      'DriverID=MSSQL')
+    Connected = True
+    Left = 408
+    Top = 80
+  end
+  object FDQuery1: TFDQuery
+    Active = True
+    Connection = FDConnection1
+    SQL.Strings = (
+      'select * from TblCadastro')
+    Left = 480
+    Top = 80
+  end
+  object DataSource1: TDataSource
+    DataSet = FDQuery1
+    Left = 544
+    Top = 80
+  end
+  object FDTable1: TFDTable
+    MasterSource = DataSource1
+    Connection = FDConnection1
+    FetchOptions.AssignedValues = [evAutoClose, evUnidirectional]
+    FetchOptions.Unidirectional = True
+    FetchOptions.AutoClose = False
+    FormatOptions.AssignedValues = [fvQuoteIdentifiers]
+    FormatOptions.QuoteIdentifiers = True
+    Left = 456
+    Top = 168
+  end
+end

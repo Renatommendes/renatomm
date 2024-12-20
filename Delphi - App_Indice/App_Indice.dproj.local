@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/03/07 10:39:09.000.674,=C:\Users\grv\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/03/07 11:50:02.000.479,=C:\Users\grv\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/03/07 11:52:20.000.793,C:\App_Indice\uFrmPrincipal.pas=C:\Users\grv\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/03/07 11:52:20.000.793,C:\App_Indice\uFrmPrincipal.dfm=C:\Users\grv\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2022/03/07 11:53:00.000.031,C:\App_Indice\App_Indice.dproj=C:\Users\grv\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2022/03/07 13:35:04.000.234,=C:\App_Indice\Unit1.pas</Transaction>
+    <Transaction>2022/03/07 13:36:02.000.489,C:\App_Indice\uFrmRequisitos.dfm=C:\App_Indice\Unit1.dfm</Transaction>
+    <Transaction>2022/03/07 13:36:02.000.489,C:\App_Indice\uFrmRequisitos.pas=C:\App_Indice\Unit1.pas</Transaction>
+    <Transaction>2022/03/07 14:05:39.000.487,=C:\App_Indice\Unit1.pas</Transaction>
+    <Transaction>2022/03/07 14:06:29.000.562,C:\App_Indice\uFrmResultado.pas=C:\App_Indice\Unit1.pas</Transaction>
+    <Transaction>2022/03/07 14:06:29.000.562,C:\App_Indice\uFrmResultado.dfm=C:\App_Indice\Unit1.dfm</Transaction>
+    <Transaction>2022/03/07 14:42:27.000.237,=C:\App_Indice\Unit1.pas</Transaction>
+    <Transaction>2022/03/07 14:42:59.000.021,C:\App_Indice\Unit1.pas=C:\App_Indice\uDadosPessoa.pas</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<NoProfile iOSSimulator="iPhone5"/>
+	</ActiveMobileDevice>
+</BorlandProject>

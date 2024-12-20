@@ -1,0 +1,46 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: Noto Sans, sans-serif;
+    /*-----------font-family: Noto Sans, sans-serif;  */
+}
+.caixa-itens {
+    background: #f0ffff;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+}
+
+.titulo {
+
+
+   
+}
+
+.mapa {
+padding-bottom: 30px;
+}
+
+.caixa-botao-tabela {
+display: flex;
+}
+
+.caixa-botao {
+
+padding-right: 30px;
+    
+}
+
+.tabela {
+
+padding-left: 10px;
+}
+
+.caixa-logo{
+padding-top: 50px;
+}

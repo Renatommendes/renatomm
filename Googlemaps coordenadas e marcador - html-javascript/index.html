@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Marcar Coordenadas no Mapa</title>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOURAPIKEY"></script>
+    <script>
+        var map;
+
+        function initMap() {
+            var mapOptions = {
+                center: { lat: 0, lng: 0 },
+                zoom: 2
+            };
+            map = new google.maps.Map(document.getElementById('map'), mapOptions);
+        }
+
+        function markOnMap() {
+            var latLngStr = document.getElementById('coordinates').value;
+            var latLngArr = latLngStr.split(',');
+            var lat = parseFloat(latLngArr[0]);
+            var lng = parseFloat(latLngArr[1]);
+            
+            if (isNaN(lat) || isNaN(lng)) {
+                alert('Por favor, insira coordenadas válidas.');
+                return;
+            }
+            
+            var marker = new google.maps.Marker({
+                position: { lat: lat, lng: lng },
+                map: map
+            });
+
+            map.setCenter({ lat: lat, lng: lng });
+            map.setZoom(15);
+        }
+    </script>
+</head>
+<body onload="initMap()">
+    <div>
+        <label for="coordinates">Insira as coordenadas (latitude, longitude):</label>
+        <input type="text" id="coordinates" placeholder="Ex: 40.7128, -74.0060">
+        <button onclick="markOnMap()">Marcar no Mapa</button>
+    </div>
+    <div id="map"></div>
+</body>
+</html>

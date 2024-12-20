@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/03/07 10:39:09.000.674,=C:\Users\grv\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/03/10 13:01:38.000.850,=C:\Users\grv\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/03/16 08:39:25.000.437,=C:\Users\grv\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/03/17 15:06:23.000.252,=C:\Users\grv\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/03/24 11:49:11.000.740,=C:\Users\grv\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/03/28 09:25:12.000.279,=C:\Users\grv\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/03/28 09:26:08.000.120,=C:\Users\grv\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/04/06 09:31:27.598,=C:\Users\grv\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/04/06 09:33:12.415,C:\Users\grv\Desktop\Renato Estudo Delphi\Apps Estudo\App - Aula XML\uFrmLerXML.dfm=C:\Users\grv\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2022/04/06 09:33:12.415,C:\Users\grv\Desktop\Renato Estudo Delphi\Apps Estudo\App - Aula XML\uFrmLerXML.pas=C:\Users\grv\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/04/06 09:33:44.418,C:\Users\grv\Desktop\Renato Estudo Delphi\Apps Estudo\App - Aula XML\App_aulaXML.dproj=C:\Users\grv\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<NoProfile iOSSimulator="iPhone5"/>
+	</ActiveMobileDevice>
+</BorlandProject>

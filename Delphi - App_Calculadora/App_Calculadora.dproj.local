@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/03/07 10:39:09.000.674,=C:\Users\grv\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/03/10 13:01:38.000.850,=C:\Users\grv\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/03/14 09:26:11.000.656,=C:\Users\grv\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/03/14 09:26:45.000.779,C:\Users\grv\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\grv\Desktop\Renato Estudo Delphi\Apps Estudo\uFrmPrincipal.dfm</Transaction>
+    <Transaction>2022/03/14 09:26:45.000.779,C:\Users\grv\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\grv\Desktop\Renato Estudo Delphi\Apps Estudo\uFrmPrincipal.pas</Transaction>
+    <Transaction>2022/03/14 09:27:45.000.329,C:\Users\grv\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\grv\Desktop\Renato Estudo Delphi\Apps Estudo\App_Calculadora.dproj</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<NoProfile iOSSimulator="iPhone5"/>
+	</ActiveMobileDevice>
+</BorlandProject>

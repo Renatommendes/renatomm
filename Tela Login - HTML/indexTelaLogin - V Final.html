@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!---------------------------<style type="text/css"> - Usado para fazer o CSS. Inicia-se dentro do head--------------- -->
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: Noto Sans, sans-serif;
+
+        }
+
+        .main-login {
+            background: #f0ffff;
+            width: 100vw;
+            height: 100vh;
+            /*-----------display: flex; - Faz a separação das coisas - div esquerda e div direita*/
+            display: flex;
+            /*-----------justify-content: center; - Faz a centralização dos itens no eixo X. Obs Add espaços */
+            justify-content: center;
+            /*-----------align-items: center; - Faz a centralização dos itens no eixo Y. Obs Add espaços */
+            align-items: center;
+            flex-direction: row;
+        }
+
+        /*---------------------------------------------------------*/
+        /*------------------estilo para o titulo safar-----------------------------------*/
+
+        .right-login {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+        }
+
+
+
+        /*---------------------------------------------------------*/
+        /*-------------estilo para o titulo Login --------------------------------------------*/
+        .card-login {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 15px 0px 15px 0px;
+            background: #f0ffff;
+            border-radius: 20px;
+            box-shadow: 0px 10px 40px #00000056;
+        }
+        /*---------------------------------------------------------*/
+        /*-------------estilo para o titulo Login --------------------------------------------*/
+        .card-login-2 {
+            width: 60%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 5px 20px 5px 20px;
+            margin-bottom: 20px;
+            background: #484d4d;
+            border-radius: 20px;
+            box-shadow: 0px 10px 40px #00000056;
+        }
+
+        .card-login-2>h1 {
+
+            color: #ffffff;
+            font-weight: 800;
+            margin: 0;
+        }
+
+        /*---------------------------------------------------------*/
+
+        .card-login-3 {
+            width: 60%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 5px 20px 5px 20px;
+            background: #484d4d;
+            border-radius: 20px;
+            box-shadow: 0px 10px 40px #00000056;
+        }
+
+        /*---------------------------------------------------------*/
+        .textfield {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 0px 95px 0px 95px;
+            margin: 10px 0px;
+        }
+
+        .textfield>input {
+            width: 100%;
+            border: none;
+            border-radius: 10px;
+            padding: 15px;
+            background: #ffffff;
+            color: #000000de;
+            font-size: 12pt;
+            box-shadow: none;
+            box-sizing: border-box;
+        }
+
+        .textfield>label {
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .textfield>input::placeholder {
+            color: #00000094;
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 16px 0px;
+            margin: 25px;
+            border: none;
+            border-radius: 8px;
+            outline: none;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 3px;
+            color: #ffffff;
+
+            background: #e4322d;
+            cursor: pointer;
+            box-shadow: 0px 10px 40px -12px #00ff8052;
+        }
+
+        .logo{
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            padding-top: 25px;
+            border-radius: 20px;
+
+        }
+    </style>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEGER-TELECOM</title>
+</head>
+
+<body>
+    <div class="main-login">
+
+        <div class="righ-login">
+            <!-------------------nesse item ajusta card login--------------- -->
+
+            <div class="card-login">
+                <div class="card-login-2">
+                    <h1>SAFAR</h1>
+                </div>
+                <div class="card-login-3">
+                    <!---------------------------------------------------------- -->
+                    <div class="textfield">
+                        <label for="usuario">Usuário</label>
+                        <input type="text" name="usuario" placeholder="Usuário">
+                    </div>
+                    <div class="textfield">
+                        <label for="senha">Senha</label>
+                        <input type="password" name="senha" placeholder="Senha">
+                    </div>
+                    <!-------------------nesse item ajuste do botão login--------------- -->
+                    <button class="btn-login">ENTRAR</button>
+                </div>
+            </div>
+            <div class="logo">
+                <img src="LogoNeger.jpg" alt="Logo Neger" width="150" height="65"
+                    style="box-shadow:0px 10px 40px #00000056 ;">
+            </div>
+
+        </div>
+
+
+    </div>
+</body>
+
+</html>
